@@ -75,3 +75,15 @@ def detect_image(template_path, similar=0.3):
         return True
     else:
         return False
+
+
+def scroll_down(template_path,similar=0.5, click_offset = None ):
+    # if not wait_until_image_show(template_path):
+    #     print(f"Image not found within 30 seconds.")
+    #     return False
+    center_x, center_y = wait_until_image_show(template_path, similar)
+    center_x = click_offset[0] + center_x
+    center_y = click_offset[1] + center_y
+    pyautogui.moveTo(center_x, center_y)
+    pyautogui.scroll(-1)
+    return True

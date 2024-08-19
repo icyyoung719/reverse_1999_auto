@@ -1,6 +1,6 @@
 import time
 
-from utils import click_on_image, wait_until_image_show, detect_image
+from utils import click_on_image, wait_until_image_show, detect_image,scroll_down
 
 language = 'en'
 
@@ -225,32 +225,51 @@ def daily_task_claim():
     return True
 
 
-# windows_btn = Button("windows_btn", "./assets/windows_btn.png")
-# search_column = Button("search_column", "./assets/search_column_btn.png")
-# start_reverse_1999_btn = Button("start_reverse_1999_btn", "./assets/start_reverse_1999_btn.png")
-# play_game_btn = Button("play_game_btn","./assets/play_game_btn.png")
-#
-#
-# def start_game():
+windows_btn = Button("windows_btn", "./assets/windows_btn.png")
+search_column_btn = Button("search_column", "./assets/search_column_btn.png")
+start_reverse_1999_btn = Button("start_reverse_1999_btn", "./assets/start_reverse_1999_btn.png")
+play_game_btn = Button("play_game_btn","./assets/play_game_btn.png")
+game_title_btn = Button("game_title_btn","./assets/game_title_btn.png")
+
+
+def start_game():
+    windows_btn.click()
+    time.sleep(1.5)
+
+    scroll_down(search_column_btn.path,0.5,[0,300])
+    time.sleep(0.5)
+
+    start_reverse_1999_btn.click()
+    time.sleep(3)
+
+    play_game_btn.click()
+
+    wait_until_image_show(game_title_btn.path)
+    time.sleep(7)
+
+    game_title_btn.click()
+    time.sleep(0.5)
+    game_title_btn.click()
+
 
 
 
 if __name__ == "__main__":
 
-    # 等待 3 秒后开始
+    # 等待 1 秒后开始
     time.sleep(1)
 
     # 开始游戏
-    # start_game()
+    start_game()
     #
-    # 荒原
-    wildren_collect()
-    #
-    # 意志解析 2 次
-    daily_battle_psy()
-    #
-    # 微尘 4 次 100 体力
-    the_poussiere()
-    #
-    # 每日任务收集
-    daily_task_claim()
+    # # 荒原
+    # wildren_collect()
+    # #
+    # # 意志解析 2 次
+    # daily_battle_psy()
+    # #
+    # # 微尘 4 次 100 体力
+    # the_poussiere()
+    # #
+    # # 每日任务收集
+    # daily_task_claim()
