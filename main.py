@@ -1,4 +1,5 @@
 import time
+import subprocess
 
 from utils import click_on_image, wait_until_image_show, detect_image,scroll_down
 
@@ -232,7 +233,7 @@ play_game_btn = Button("play_game_btn","./assets/play_game_btn.png")
 game_title_btn = Button("game_title_btn","./assets/game_title_btn.png")
 
 
-def start_game():
+def OCR_start_game():
     windows_btn.click()
     time.sleep(1.5)
 
@@ -240,18 +241,27 @@ def start_game():
     time.sleep(0.5)
 
     start_reverse_1999_btn.click()
-    time.sleep(3)
 
+    wait_until_image_show(play_game_btn.path)
     play_game_btn.click()
 
     wait_until_image_show(game_title_btn.path)
     time.sleep(7)
 
     game_title_btn.click()
-    time.sleep(0.5)
+
+
+def path_start_game():
+    game_path = r'D:\1999\reverse1999_global\reverse1999-launcher.exe'
+    subprocess.Popen(game_path)
+
+    wait_until_image_show(play_game_btn.path)
+    play_game_btn.click()
+
+    wait_until_image_show(game_title_btn.path)
+    time.sleep(7)
+
     game_title_btn.click()
-
-
 
 
 if __name__ == "__main__":
@@ -260,7 +270,8 @@ if __name__ == "__main__":
     time.sleep(1)
 
     # 开始游戏
-    start_game()
+    # OCR_start_game()
+    path_start_game()
     #
     # # 荒原
     # wildren_collect()
