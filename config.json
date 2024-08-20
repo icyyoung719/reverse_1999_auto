@@ -4,10 +4,10 @@
         "EXE (*.exe)"
     ],
     "last_function_select": [
-        true,
-        true,
-        true,
         false,
-        false
+        false,
+        false,
+        false,
+        true
     ]
 }

@@ -10,9 +10,9 @@ class Button:
     name = None
     path = None
     offset = None
-    min_similar = 0.7
+    min_similar = 0.8
 
-    def __init__(self, name, path, min_similar = 0.7, offset = None):
+    def __init__(self, name, path, min_similar = 0.8, offset = None):
         self.name = name
         if (language == 'en'):
             self.path = path.replace('./assets', './assets/en').replace('jpg', 'png')
@@ -21,7 +21,7 @@ class Button:
         self.min_similar = min_similar
         self.offset = offset
 
-    def click(self, similar = 0.7):
+    def click(self, similar = 0.8):
         print(f"{self.name} clicked")
         return click_on_image(self.path, similar = similar, click_offset = self.offset)
 
@@ -60,7 +60,7 @@ def wildren_collect():
 
     time.sleep(2)
 
-    back_to_home_button.click(0.3)
+    back_to_home_button.click(0.8)
 
     wait_until_image_show(home_hide_btn.path)
     return 0
@@ -127,7 +127,7 @@ def the_poussiere():
     wait_until_image_show(back_to_home_button.path)
     back_to_home_button.click()
 
-    wait_until_image_show(home_hide_btn)
+    wait_until_image_show(home_hide_btn.path)
     return 0
 
 

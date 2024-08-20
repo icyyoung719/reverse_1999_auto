@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d1763be0-5716-4c30-94c6-40eb7fd2d4e3" name="Changes" comment="feat: 实现了一个新的UI界面">
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ui_to_py.py" afterDir="false" />
+    <list default="true" id="d1763be0-5716-4c30-94c6-40eb7fd2d4e3" name="Changes" comment="feat: 添加利用 PySide6 实现 GUI 程序的功能，通过勾选自定义日常行为方案，并实现自动缓存设置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/function.py" beforeDir="false" afterPath="$PROJECT_DIR$/function.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ui.py" beforeDir="false" afterPath="$PROJECT_DIR$/ui.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -38,10 +34,11 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Python.function (1).executor": "Debug",
+    "Python.function.executor": "Run",
     "Python.main.executor": "Run",
     "Python.test.executor": "Run",
     "Python.ui_to_py.executor": "Run",
-    "Python.utils.executor": "Debug",
+    "Python.utils.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "D:/Pycharm/Py_projects/reverse_1999_copilot",
@@ -123,8 +120,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.function (1)" />
         <item itemvalue="Python.function" />
+        <item itemvalue="Python.function (1)" />
         <item itemvalue="Python.utils" />
       </list>
     </recent_temporary>
@@ -177,7 +174,15 @@
       <option name="project" value="LOCAL" />
       <updated>1724125706183</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feat: 添加利用 PySide6 实现 GUI 程序的功能，通过勾选自定义日常行为方案，并实现自动缓存设置">
+      <option name="closed" value="true" />
+      <created>1724140573567</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1724140573567</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -186,7 +191,8 @@
     <MESSAGE value="自动登录（还差最后一步）" />
     <MESSAGE value="完善自动登录功能，添加了根据游戏路径启动游戏程序的方法" />
     <MESSAGE value="feat: 实现了一个新的UI界面" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 实现了一个新的UI界面" />
+    <MESSAGE value="feat: 添加利用 PySide6 实现 GUI 程序的功能，通过勾选自定义日常行为方案，并实现自动缓存设置" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 添加利用 PySide6 实现 GUI 程序的功能，通过勾选自定义日常行为方案，并实现自动缓存设置" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -195,11 +201,6 @@
           <url>file://$PROJECT_DIR$/test.py</url>
           <line>29</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>46</line>
-          <option name="timeStamp" value="43" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/main.py</url>

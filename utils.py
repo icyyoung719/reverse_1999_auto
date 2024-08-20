@@ -19,7 +19,7 @@ def find_template(template, screenshot):
     return max_val, max_loc
 
 
-def click_on_image(template_path, similar=0.3, click_offset=None):
+def click_on_image(template_path, similar=0.8, click_offset=None):
     if click_offset is None:
         click_offset = [0, 0]
     template = cv2.imread(template_path)
@@ -33,14 +33,14 @@ def click_on_image(template_path, similar=0.3, click_offset=None):
         center_y = max_loc[1] + template_height // 2 + click_offset[1]
 
         pyautogui.click(center_x, center_y)
-        print(f"Clicked on the image at ({center_x}+{click_offset[0]}, {center_y}+{click_offset[1]})")
+        print(f"Clicked on {template_path} at ({center_x}+{click_offset[0]}, {center_y}+{click_offset[1]})")
         return center_x, center_y
     else:
         print("Image not found on the screen.")
         return False
 
 
-def wait_until_image_show(template_path, similar=0.3, timeout=30, interval=1):
+def wait_until_image_show(template_path, similar=0.8, timeout=40, interval=1):
     start_time = time.time()
 
     while time.time() - start_time < timeout:
@@ -57,13 +57,14 @@ def wait_until_image_show(template_path, similar=0.3, timeout=30, interval=1):
             print(f"Image found at ({center_x}, {center_y})")
             return center_x, center_y
 
+        print(f"waiting----- {template_path}")
         time.sleep(interval)
 
     print(f"Image not found within {timeout} seconds.")
     return False
 
 
-def detect_image(template_path, similar=0.3):
+def detect_image(template_path, similar=0.8):
     template = cv2.imread(template_path)
     screenshot = capture_screen()
 
@@ -78,7 +79,7 @@ def detect_image(template_path, similar=0.3):
         return False
 
 
-def scroll_down(template_path,similar=0.5, click_offset = None ):
+def scroll_down(template_path,similar=0.8, click_offset = None ):
     # if not wait_until_image_show(template_path):
     #     print(f"Image not found within 30 seconds.")
     #     return False
