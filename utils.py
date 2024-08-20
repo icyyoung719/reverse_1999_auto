@@ -2,6 +2,7 @@ import cv2
 import pyautogui
 import numpy as np
 import time
+import json
 
 
 def capture_screen():
@@ -87,3 +88,23 @@ def scroll_down(template_path,similar=0.5, click_offset = None ):
     pyautogui.moveTo(center_x, center_y)
     pyautogui.scroll(-1)
     return True
+
+
+def save_json(config_data):
+    with open('config.json', 'w') as f:
+        # 使用dump函数将配置数据写入文件
+        json.dump(config_data, f, indent = 4)  # indent=4 使输出更美观，不是必需的
+
+
+def load_json():
+    try:
+        with open('config.json', 'r') as f:
+            config_data = json.load(f)
+        return config_data
+    except FileNotFoundError:
+        print("欢迎初次使用")
+    except json.JSONDecodeError:
+        print("配置文件config.json格式错误，无法解析。")
+    except Exception as e:
+        print(f"读取配置文件时发生错误：{e}")
+    return None
