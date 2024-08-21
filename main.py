@@ -24,12 +24,12 @@ class MainWindow(QWidget):
                 path_start_game(game_path)
             else:
                 path_start_game()
+            time.sleep(8)
         else:
             find_game()
-        time.sleep(8)
-
+            time.sleep(2)
         if self.function_to_complete[1]:
-            wildren_collect()
+            wilderness_collect()
         if self.function_to_complete[2]:
             time.sleep(3)
             daily_battle_psy()

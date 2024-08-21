@@ -36,22 +36,25 @@ wild_weichen_collect_btn = Button(name = 'wild_weichen_collect_btn', path = './a
 
 
 # 荒原收集
-def wildren_collect():
+def wilderness_collect():
     wait_until_image_show(home_hide_btn.path)
     wild_button.click()
 
     wait_until_image_show(back_to_home_button.path)
     time.sleep(1)
 
-    wait_until_image_show(wild_lichi_collect_btn.path)
-    wild_lichi_collect_btn.click()
-
-    time.sleep(2)
-
-    wait_until_image_show(wild_weichen_collect_btn.path)
-    wild_weichen_collect_btn.click()
-
-    time.sleep(2)
+    #可以收舍利子
+    if detect_image(wild_lichi_info_btn.path):
+        wild_lichi_info_btn.click()
+        time.sleep(2)
+        wild_lichi_collect_btn.click(0.4)
+        time.sleep(2)
+    #可以微尘
+    if detect_image(wild_weichen_info_btn.path):
+        wild_weichen_info_btn.click()
+        time.sleep(2)
+        wild_weichen_collect_btn.click(0.4)
+        time.sleep(2)
 
     if detect_image(friendly_button.path):
         # 可以收好感度
@@ -202,23 +205,30 @@ def daily_task_claim():
     if detect_image(home_hide_btn.path) is False:
         return "不在箱子里!"
 
+    wait_until_image_show(daily_task_btn.path)
+    time.sleep(0.5)
     daily_task_btn.click()
 
     time.sleep(2)
     if detect_image(claim_all_btn.path):
         claim_all_btn.click()
+        time.sleep(2)
+
+        # 如果领取到了东西
+        wait_until_image_show(get_item_info.path)
         time.sleep(1)
-
-    time.sleep(1)
-
-    # 如果领取到了东西
-    if detect_image(get_item_info.path):
         get_item_info.click()
         time.sleep(1)
 
-    back_to_home_button.click()
+        wait_until_image_show(back_to_home_button.path)
+        back_to_home_button.click()
 
-    wait_until_image_show(home_hide_btn.path)
+        wait_until_image_show(home_hide_btn.path)
+    else:
+        wait_until_image_show(back_to_home_button.path)
+        back_to_home_button.click()
+
+        wait_until_image_show(home_hide_btn.path)
     return True
 
 
@@ -276,7 +286,7 @@ if __name__ == "__main__":
     # path_start_game()
     #
     # # 荒原
-    wildren_collect()
+    wilderness_collect()
     # #
     # # 意志解析 2 次
     # daily_battle_psy()
