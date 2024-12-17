@@ -30,3 +30,10 @@ pip install opencv-python pyautogui numpy
 ***
 
 reverse 1999 auto by OCR
+
+## TODO list:
+- 重构代码，以回调函数实现
+- 将参数（如time.sleep的大小）存放在单独的py文件中调用，提升可读性
+- 将截图放在不同的文件夹下，防止每次花费大量时间查找
+- 将功能需求存放在容器中，提供运行时添加/删除 功能的效果
+- 

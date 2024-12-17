@@ -232,6 +232,29 @@ def daily_task_claim():
     return True
 
 
+# TODO:补充所有体力
+activity_btn = Button("activity_btn", "./assets/activity.png")
+picrasma_candy_btn = Button("picrasma_candy_btn", "./assets/picrasma_candy.png")
+picrasma_jar_btn = Button("picrasma_jar_btn", "./assets/picrasma_jar.png")
+
+def eat_all_candy():
+    pass
+    wait_until_image_show(home_hide_btn.path)
+    activity_btn.click()
+    wait_until_image_show(picrasma_candy_btn.path)
+    # eat picrasma candy and picrasma jar until none left
+    while(True):
+        picrasma_candy_btn.click()
+        time.sleep(0.1)
+        picrasma_jar_btn.click()
+        time.sleep(0.1)
+
+
+# TODO:将所有体力用到当前关卡
+def use_all_candy():
+    pass
+
+
 windows_btn = Button("windows_btn", "./assets/windows_btn.png")
 search_column_btn = Button("search_column", "./assets/search_column_btn.png")
 start_reverse_1999_btn = Button("start_reverse_1999_btn", "./assets/start_reverse_1999_btn.png")
