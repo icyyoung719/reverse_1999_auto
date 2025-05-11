@@ -1,1 +1,5 @@
 /run_1999.bat
+
+__pycache__/
+config.json
+.idea/
