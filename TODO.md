@@ -4,6 +4,7 @@
     2. 将游戏相关的部分拆分到单独目录下，对于1999，也提供util,aapi等
 结构设计如下：
 ```
+project/
 ├── engine
 │   ├── api.py
 │   ├── util.py
@@ -16,6 +17,11 @@
 │   ├── util.py
 │   ├── api.py
 │   ├── config.py :存放配置信息，如OCR后等待时间、最长等待时间
+|   ├── tasks
+│   │   ├── basetask.py
+│   │   ├── task1.py
+│   │   ├── task2.py
+│   │   └──...
 │   ├── assets
 │   │   ├── img1.png：OCR图片
 │   │   └── img2.png：OCR图片
@@ -33,6 +39,9 @@
 
 2. 游戏脚本只能线性运行，我们可以将功能需求存放在容器(也许是队列？)中，提供运行时添加/删除 功能的效果
 
+
+
+搞清楚wait_until_image_show等方法要谁提供！
 
 
 

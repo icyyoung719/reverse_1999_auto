@@ -5,13 +5,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1763be0-5716-4c30-94c6-40eb7fd2d4e3" name="Changes" comment="add TODO">
+      <change afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/back_to_home_target.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/battle_win.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/home_hide_target.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/pneuma_analysis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/psy_07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/replay_2_times.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/replay_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/resource_target.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/return_to_login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/start_action.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/config/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/config/key/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/engine/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/engine/api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/engine/engineconfig.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/engine/log.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/engine/target.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/engine/util.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/src/log.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/back_to_home_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/battle_win_info.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/game_title_btn.png" beforeDir="false" afterPath="$PROJECT_DIR$/1999/assets/en/game_title_btn.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/home_hide_btn.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/psy_07_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/replay_2_times_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/replay_4_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/resource_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/start_action_button.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/config/key/homepage.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/config/key/wildness.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/ui/ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/api.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/log.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/engine/util.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -28,28 +76,32 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Python.function (1).executor&quot;: &quot;Debug&quot;,
-    &quot;Python.function.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.test.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ui_to_py.executor&quot;: &quot;Run&quot;,
-    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Pycharm/Py_projects/reverse_1999_copilot&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Python.function (1).executor": "Debug",
+    "Python.function.executor": "Debug",
+    "Python.main.executor": "Run",
+    "Python.start_game.executor": "Run",
+    "Python.test.executor": "Run",
+    "Python.ui_to_py.executor": "Run",
+    "Python.utils.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/Pycharm/Py_projects/reverse_1999_copilot/1999/src",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Pycharm\Py_projects\reverse_1999_copilot\1999\src" />
+      <recent name="D:\Pycharm\Py_projects\reverse_1999_copilot\1999\src\config" />
+      <recent name="D:\Pycharm\Py_projects\reverse_1999_copilot\1999\src\config\key" />
       <recent name="D:\Pycharm\Py_projects\reverse_1999_copilot" />
       <recent name="D:\Pycharm\Py_projects\reverse_1999_copilot\assets\en" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.function">
+  <component name="RunManager">
     <configuration name="function (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="autoGame" />
       <option name="ENV_FILES" value="" />
@@ -215,6 +267,17 @@
     <option name="localTasksCounter" value="10" />
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="reverse 1999 auto" />
@@ -229,6 +292,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/1999/src/tasks/start_game.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
