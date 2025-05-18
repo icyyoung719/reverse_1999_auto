@@ -19,18 +19,18 @@ class WildernessCollect(Task):
     def run(self):
         super().run()
         try:
-            pyautogui.press(HomepageKey.WILDERNESS_KEY)
+            Log.press(HomepageKey.WILDERNESS_KEY)
 
             self.wait_until_image_show(GameTarget.back_to_home)
             time.sleep(Config.CLICK_AFTER_WAIT)
 
-            pyautogui.press(WildnessKey.CLAIM_SHARPODONTY_KEY)
+            Log.press(WildnessKey.CLAIM_SHARPODONTY_KEY)
             time.sleep(Config.CLICK_INTERVAL)
-            pyautogui.press(WildnessKey.CLAIM_DUST_KEY)
+            Log.press(WildnessKey.CLAIM_DUST_KEY)
             time.sleep(Config.CLICK_INTERVAL)
-            pyautogui.press(WildnessKey.GAIN_CHARACTER_BOND_KEY)
+            Log.press(WildnessKey.GAIN_CHARACTER_BOND_KEY)
             time.sleep(Config.CLICK_INTERVAL)
-            pyautogui.press(GeneralKey.BACK_KEY)
+            Log.press(GeneralKey.BACK_KEY)
 
             self.wait_until_image_show(GameTarget.home_hide)
             return True

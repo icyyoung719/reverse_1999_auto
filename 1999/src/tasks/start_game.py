@@ -48,22 +48,22 @@ class CloseNotice(Task):
             # 不能这样，启动游戏后会有瞬间显示home_hide
             # while not self.detect_image(GameTarget.home_hide):
             #     time.sleep(Config.CLICK_INTERVAL)
-            #     pyautogui.press(GeneralKey.BACK_KEY)
+            #     Log.press(GeneralKey.BACK_KEY)
             #     if self.detect_image(GameTarget.return_to_login):
             #         # ESC次数已经超过了，OCR略有失误
 
-            #         # pyautogui.press(GeneralKey.ENTER_KEY)
+            #         # Log.press(GeneralKey.ENTER_KEY)
             #         # time.sleep(Config.CLICK_INTERVAL)
             #         time.sleep(Config.CLICK_INTERVAL)
-            #         pyautogui.press(GeneralKey.BACK_KEY)
+            #         Log.press(GeneralKey.BACK_KEY)
             #         print("ESC次数已经超过了，OCR略有失误")
             #         break
             while not self.detect_image(GameTarget.return_to_login):
                 time.sleep(Config.CLICK_INTERVAL)
-                pyautogui.press(GeneralKey.BACK_KEY)
+                Log.press(GeneralKey.BACK_KEY)
             
             time.sleep(Config.CLICK_INTERVAL)
-            pyautogui.press(GeneralKey.BACK_KEY)
+            Log.press(GeneralKey.BACK_KEY)
             time.sleep(Config.CLICK_INTERVAL)
 
             print("进入主界面")

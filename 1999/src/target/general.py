@@ -19,12 +19,12 @@ class GameTarget:
     # used in the poussiere
 
     # used in pneuma analysis
-    resource = Target(name = "resource_target", path = "../assets/resource_target.png")
+    resource = Target(name = "resource_target", path = "../assets/resource.png")
     psy_free_times = Target(name = "psy_free_times_target", path = "../assets/psy_free_times.png")
     pneuma_analysis = Target(name = "pneuma_analysis_target", path = "../assets/pneuma_analysis.png")
     pneuma_07 = Target(name = "pneuma_07_target", path = "../assets/psy_07.png")
     replay_2_times = Target(name = "replay_2_times_target", path = "../assets/replay_2_times.png")
     replay_4_times = Target(name = "replay_4_times_target", path = "../assets/replay_4_times.png")
-    replay_info = Target(name = "replay_info_target", path = "../assets/replay_info.png")
+    replaying_info = Target(name = "replaying_info_target", path = "../assets/replaying_info.png")
     battle_win = Target(name = "battle_win_target", path = "../assets/battle_win.png")
     

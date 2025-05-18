@@ -18,7 +18,8 @@ class PneumaAnalysis(Task):
     def run(self):
         super().run()
         try:
-            pyautogui.press(HomepageKey.STORY)
+            Log.press(HomepageKey.STORY)
+            self.wait_and_click(GameTarget.resource)
             self.wait_and_click(GameTarget.pneuma_analysis)
             self.wait_and_click(GameTarget.pneuma_07)
             self.wait_and_click(GameTarget.start_action)
@@ -32,7 +33,7 @@ class PneumaAnalysis(Task):
                 self.wait_and_click(GameTarget.replay_4_times)
                 
             time.sleep(Config.CLICK_AFTER_WAIT)
-            self.wait_until_image_show(GameTarget.replay_info)
+            self.wait_until_image_show(GameTarget.replaying_info)
             if self.detect_image(GameTarget.replay_info):
                 print("Replaying...")
 
@@ -43,7 +44,7 @@ class PneumaAnalysis(Task):
             return True
 
         except Exception as e:
-            print(f"荒原收集失败: {str(e)}")
+            print(f"意志解析失败: {str(e)}")
             return False
 
             

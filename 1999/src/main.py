@@ -2,7 +2,7 @@ import sys
 import os
 import ctypes
 import json
-
+import time
 
 from tasks.start_game import StartGame, CloseNotice
 from tasks.wildness import WildernessCollect
@@ -61,12 +61,13 @@ if __name__ == '__main__':
     # container.add_task({"id": "task1", "name": "日常任务"})
     # # 示例：获取任务
     # print(container.get_next_task())
-    startGameTask = StartGame()
-    startGameTask.run()
-    closeNoticeTask = CloseNotice()
-    closeNoticeTask.run()
-    wildnessCollectTask = WildernessCollect()
-    wildnessCollectTask.run()
+    # startGameTask = StartGame()
+    # startGameTask.run()
+    # closeNoticeTask = CloseNotice()
+    # closeNoticeTask.run()
+    time.sleep(2)
+    # wildnessCollectTask = WildernessCollect()
+    # wildnessCollectTask.run()
     pneumaAnalysisTask = PneumaAnalysis()
     pneumaAnalysisTask.run()
 

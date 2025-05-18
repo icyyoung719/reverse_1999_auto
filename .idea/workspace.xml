@@ -5,49 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d1763be0-5716-4c30-94c6-40eb7fd2d4e3" name="Changes" comment="add TODO">
-      <change afterPath="$PROJECT_DIR$/.vscode/c_cpp_properties.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/back_to_home_target.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/battle_win.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/home_hide_target.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/pneuma_analysis.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/psy_07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/replay_2_times.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/replay_4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/resource_target.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/return_to_login.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/assets/en/start_action.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/config/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/config/key/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/engine/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/engine/api.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/engine/engineconfig.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/engine/log.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/engine/target.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/engine/util.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1999/src/log.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1999/assets/en/resource.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/assets/en/back_to_home_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/assets/en/battle_win_info.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/assets/en/game_title_btn.png" beforeDir="false" afterPath="$PROJECT_DIR$/1999/assets/en/game_title_btn.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/assets/en/home_hide_btn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/assets/en/psy_07_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/assets/en/replay_2_times_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/assets/en/replay_4_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/assets/en/resource_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/assets/en/start_action_button.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/config.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/config/key/homepage.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/config/key/wildness.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/ui/ui.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/1999/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/TODO.md" beforeDir="false" afterPath="$PROJECT_DIR$/TODO.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/api.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/log.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/engine/util.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/assets/en/resource_target.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/src/log.py" beforeDir="false" afterPath="$PROJECT_DIR$/1999/src/log.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/1999/src/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/src/target/general.py" beforeDir="false" afterPath="$PROJECT_DIR$/1999/src/target/general.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/src/tasks/pneuma_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/1999/src/tasks/pneuma_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/src/tasks/start_game.py" beforeDir="false" afterPath="$PROJECT_DIR$/1999/src/tasks/start_game.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/1999/src/tasks/wildness.py" beforeDir="false" afterPath="$PROJECT_DIR$/1999/src/tasks/wildness.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,8 +261,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/1999/src/tasks/start_game.py</url>
-          <line>24</line>
+          <line>25</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/1999/src/tasks/wildness.py</url>
+          <line>34</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
