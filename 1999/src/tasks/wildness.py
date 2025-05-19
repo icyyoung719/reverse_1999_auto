@@ -31,6 +31,8 @@ class WildernessCollect(Task):
             Log.press(WildnessKey.GAIN_CHARACTER_BOND_KEY)
             time.sleep(Config.CLICK_INTERVAL)
             Log.press(GeneralKey.BACK_KEY)
+            # 等待完全退回主页面
+            time.sleep(Config.CLICK_INTERVAL)
 
             self.wait_until_image_show(GameTarget.home_hide)
             return True
