@@ -7,6 +7,8 @@ import time
 from tasks.start_game import StartGame, CloseNotice
 from tasks.wildness import WildernessCollect
 from tasks.pneuma_analysis import PneumaAnalysis
+from tasks.the_poussiere import ThePoussiere
+from tasks.daily_mission_collect import DailyMissionCollect
 
 from collections import deque
 from config.config import Config
@@ -68,8 +70,12 @@ if __name__ == '__main__':
     time.sleep(2)
     # wildnessCollectTask = WildernessCollect()
     # wildnessCollectTask.run()
-    pneumaAnalysisTask = PneumaAnalysis()
-    pneumaAnalysisTask.run()
+    # pneumaAnalysisTask = PneumaAnalysis()
+    # pneumaAnalysisTask.run()
+    thePoussiereTask = ThePoussiere()
+    thePoussiereTask.run()
+    dailyMissionCollectTask = DailyMissionCollect()
+    dailyMissionCollectTask.run()
 
 
 
