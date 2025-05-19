@@ -17,6 +17,8 @@ class GameTarget:
     # used in battle
 
     # used in the poussiere
+    the_poussiere = Target(name = "the_poussiere_target", path = "../assets/the_poussiere.png")
+    the_poussiere_06 = Target(name = "the_poussiere_06_target", path = "../assets/the_poussiere_06.png")
 
     # used in pneuma analysis
     resource = Target(name = "resource_target", path = "../assets/resource.png")
@@ -28,3 +30,7 @@ class GameTarget:
     replaying_info = Target(name = "replaying_info_target", path = "../assets/replaying_info.png")
     battle_win = Target(name = "battle_win_target", path = "../assets/battle_win.png")
     
+    # used in tasks collect
+    collect_tasks = Target(name = "collect_tasks_target", path = "../assets/collect_tasks.png")
+    confirm_collect = Target(name = "confirm_collect_target", path = "../assets/confirm_collect.png")
+
