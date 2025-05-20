@@ -37,7 +37,10 @@ class PneumaAnalysis(Task):
             if self.detect_image(GameTarget.replaying_info):
                 print("Replaying...")
 
-            self.wait_and_click(GameTarget.battle_win, timeout=240)
+            self.wait_until_image_show(GameTarget.battle_win, timeout = 240)
+            time.sleep(Config.CLICK_AFTER_WAIT)
+            self.wait_and_click(GameTarget.battle_win)
+            time.sleep(Config.CLICK_AFTER_WAIT)
             self.wait_and_click(GameTarget.back_to_home)
             
             self.wait_until_image_show(GameTarget.home_hide)
