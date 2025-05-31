@@ -1,0 +1,22 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run as Admin (Embedded)",
+            "type": "shell",
+            "command": "gsudo",
+            "args": [
+                "python",
+                "${workspaceFolder}/1999/src/main.py"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated"  // 使用专用终端面板
+            }
+        }
+    ]
+}

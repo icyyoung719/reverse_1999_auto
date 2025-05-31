@@ -1,0 +1,16 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "运行 main.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/1999/src/main.py",
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}/1999/src"
+            }
+        }
+    ]
+}

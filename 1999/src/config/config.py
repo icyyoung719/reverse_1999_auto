@@ -11,7 +11,7 @@ class Config:
     TASK_CACHE_FILE = "1999/output/config.json"
     MIN_SIMILARITY = 0.8
     LANGUAGE = "en"
-    OUTPUT_DIR = "../output"
+    OUTPUT_DIR = "1999/output"
 
     @staticmethod
     def get(key: str, default=None):
