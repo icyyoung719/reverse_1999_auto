@@ -39,3 +39,67 @@ reverse 1999 auto by OCR
 
 我制作了一个游戏脚本，但是这个游戏脚本只能线性运行
 我的想法：任务选项间首先平等，将选择的任务添加到某个容器中，每次从中取出任务，完成后检查容器；任务执行过程中能够添加/删除容器中的其他任务；
+
+
+## 代码结构
+```
+reverse_1999_copilot/
+    ├── 1999
+    │   ├── assets
+    │   │   └── en
+    │   │       └── new
+    │   ├── output
+    │   │   ├── config.json
+    │   │   └── log.txt
+    │   └── src
+    │       ├── __pycache__
+    │       ├── config
+    │       │   ├── __pycache__
+    │       │   ├── key
+    │       │   │   ├── __pycache__
+    │       │   │   ├── __init__.py
+    │       │   │   ├── general.py
+    │       │   │   ├── homepage.py
+    │       │   │   └── wildness.py
+    │       │   ├── __init__.py
+    │       │   └── config.py
+    │       ├── engine
+    │       │   ├── __pycache__
+    │       │   ├── __init__.py
+    │       │   ├── api.py
+    │       │   ├── engineconfig.py
+    │       │   ├── log.py
+    │       │   ├── target.py
+    │       │   └── util.py
+    │       ├── target
+    │       │   ├── __pycache__
+    │       │   ├── __init__.py
+    │       │   ├── general.py
+    │       │   └── target.py
+    │       ├── tasks
+    │       │   ├── __pycache__
+    │       │   ├── __init__.py
+    │       │   ├── daily_mission_collect.py
+    │       │   ├── pneuma_analysis.py
+    │       │   ├── start_game.py
+    │       │   ├── task.py
+    │       │   ├── the_poussiere.py
+    │       │   └── wildness.py
+    │       ├── ui
+    │       │   └── ui.py
+    │       ├── __init__.py
+    │       ├── api.py
+    │       ├── log.py
+    │       ├── main.py
+    │       └── util.py
+    ├── __pycache__
+    ├── README.md
+    ├── TODO.md
+    ├── function.py
+    ├── main.py
+    ├── out.txt
+    ├── run_1999.bat
+    ├── struct.txt
+    ├── tree.py
+    └── ui_to_py.py
+```

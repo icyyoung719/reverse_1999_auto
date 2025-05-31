@@ -1,82 +1,92 @@
 import sys
 import os
 import ctypes
-import json
 import time
-
+import logging
+from tasks.task_container import TaskContainer, TaskStatus
 from tasks.start_game import StartGame, CloseNotice
 from tasks.wildness import WildernessCollect
 from tasks.pneuma_analysis import PneumaAnalysis
 from tasks.the_poussiere import ThePoussiere
 from tasks.daily_mission_collect import DailyMissionCollect
-
-from collections import deque
 from config.config import Config
 
-class TaskContainer:
-    def __init__(self):
-        self.tasks = deque()
-        self.load_tasks()
-
-    def add_task(self, task: dict):
-        """添加任务到队列末尾"""
-        self.tasks.append(task)
-        self.save_tasks()
-
-    def remove_task(self, task_id: str):
-        """根据任务ID移除任务"""
-        self.tasks = deque([t for t in self.tasks if t.get('id') != task_id])
-        self.save_tasks()
-
-    def get_next_task(self) -> dict:
-        """获取并移除队列头部任务"""
-        if self.tasks:
-            return self.tasks.popleft()
-        return None
-
-    def load_tasks(self):
-        """从缓存文件加载任务"""
-        try:
-            with open(Config.TASK_CACHE_FILE, 'r', encoding='utf-8') as f:
-                self.tasks = deque(json.load(f))
-        except (FileNotFoundError, json.JSONDecodeError):
-            self.tasks = deque()
-
-    def save_tasks(self):
-        """保存任务到缓存文件"""
-        with open(Config.TASK_CACHE_FILE, 'w', encoding='utf-8') as f:
-            json.dump(list(self.tasks), f, ensure_ascii=False, indent=2)
-
-
-# ✅ 自动提权函数
 def require_admin():
+    """检查并请求管理员权限"""
     if not ctypes.windll.shell32.IsUserAnAdmin():
         ctypes.windll.shell32.ShellExecuteW(
             None, "runas", sys.executable, os.path.abspath(sys.argv[0]), None, 1)
         sys.exit()
 
+def initialize_tasks(container: TaskContainer):
+    """初始化并添加所有任务到容器"""
+    # 游戏启动和初始化任务 - 最高优先级
+    # container.add_task(StartGame(), priority=0)
+    # container.add_task(CloseNotice(), priority=1)
+    #
+    # # 主要游戏任务 - 中等优先级
+    # container.add_task(WildernessCollect(), priority=2)
+    # container.add_task(PneumaAnalysis(), priority=3)
+    container.add_task(ThePoussiere(), priority=4)
+    
+    # 可选任务 - 较低优先级
+    # container.add_task(DailyMissionCollect(), priority=5)  # 自动发邮件，暂不需要
+
+def main():
+    """主函数"""
+    try:
+        # 初始化日志
+        setup_logging()
+        logging.info("初始化系统...")
+        
+        # 初始化任务容器
+        container = TaskContainer()
+        
+        # 等待游戏启动
+        logging.info("等待游戏启动...")
+        time.sleep(5)
+        
+        # 初始化并添加任务
+        initialize_tasks(container)
+        logging.info(f"已添加 {container.get_queue_size()} 个任务到队列")
+        
+        # 等待所有任务完成
+        while not container.is_empty():
+            current_task = container.get_current_task()
+            if current_task:
+                logging.info(f"正在执行任务: {current_task.__class__.__name__}")
+                display_task_status(container)
+            time.sleep(1)
+        
+        # 停止任务容器
+        container.stop()
+        logging.info("所有任务已完成")
+        
+    except Exception as e:
+        logging.error(f"执行过程中发生错误: {str(e)}", exc_info=True)
+        raise
+    finally:
+        input("按回车键退出...") # 防止窗口闪退
+
+def setup_logging():
+    """配置日志系统"""
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler(os.path.join(Config.OUTPUT_DIR, 'log.txt'), encoding='utf-8')
+        ]
+    )
+
+def display_task_status(container: TaskContainer):
+    """显示当前任务状态"""
+    statuses = container.get_all_task_statuses()
+    if statuses:
+        logging.info("当前任务状态:")
+        for task, status in statuses.items():
+            logging.info(f"- {task.__class__.__name__}: {status.value}")
 
 if __name__ == '__main__':
-    # require_admin()
-    # container = TaskContainer()
-    # # 示例：添加任务
-    # container.add_task({"id": "task1", "name": "日常任务"})
-    # # 示例：获取任务
-    # print(container.get_next_task())
-    # startGameTask = StartGame()
-    # startGameTask.run()
-    # closeNoticeTask = CloseNotice()
-    # closeNoticeTask.run()
-    time.sleep(2)
-    # wildnessCollectTask = WildernessCollect()
-    # wildnessCollectTask.run()
-    # pneumaAnalysisTask = PneumaAnalysis()
-    # pneumaAnalysisTask.run()
-    thePoussiereTask = ThePoussiere()
-    thePoussiereTask.run()
-    dailyMissionCollectTask = DailyMissionCollect()
-    dailyMissionCollectTask.run()
-
-
-
-    input("按任意键退出...")  # 👈 添加这一行防止闪退
+    require_admin()  # 如需管理员权限请取消注释
+    main()

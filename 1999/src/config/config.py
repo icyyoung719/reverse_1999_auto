@@ -6,11 +6,12 @@ class Config:
     MAX_WAIT_TIME = 10
     CLICK_INTERVAL = 0.5
     # 循环等待到出现所需界面后，等待多久后点击
-    CLICK_AFTER_WAIT = 1
+    CLICK_AFTER_WAIT = 1.5
     GAMETITLE_WAIT_TIME = 5
     TASK_CACHE_FILE = "1999/output/config.json"
     MIN_SIMILARITY = 0.8
     LANGUAGE = "en"
+    OUTPUT_DIR = "../output"
 
     @staticmethod
     def get(key: str, default=None):

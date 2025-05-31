@@ -3,3 +3,7 @@
 __pycache__/
 config.json
 .idea/
+
+*.pyc
+
+**/output/
