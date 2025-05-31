@@ -29,7 +29,29 @@ class DailyMissionCollect(Task):
         except Exception as e:
             Log.error(f"每日任务领取失败: {str(e)}")
             return False
+
+class DailyRoarJukeboxCollect(Task):
+    def __init__(self):
+        super().__init__(name='Daily Roar Jukebox Collect')
+    
+    def run(self):
+        super().run()
+        try:
+            Log.press(HomepageKey.ROAR_JUNKBOX_KEY)
+            time.sleep(Config.CLICK_AFTER_WAIT)
+            if self.detect_image(GameTarget.collect_roar_jukebox):
+                self.wait_and_click(GameTarget.collect_roar_jukebox)
+                time.sleep(Config.CLICK_AFTER_WAIT)
+                if self.detect_image(GameTarget.roar_jukebox_update):
+                    self.wait_and_click(GameTarget.roar_jukebox_update)
+                    time.sleep(Config.CLICK_AFTER_WAIT)
             
+            self.wait_and_click(GameTarget.back_to_home)
+            return True
+
+        except Exception as e:
+            Log.error(f"Roar Box领取失败: {str(e)}")
+            return False
 
 
 # class DailyMissionCollect(Task):
