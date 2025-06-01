@@ -8,7 +8,7 @@ from tasks.start_game import StartGame, CloseNotice
 from tasks.wildness import WildernessCollect
 from tasks.pneuma_analysis import PneumaAnalysis
 from tasks.the_poussiere import ThePoussiere
-from tasks.daily_mission_collect import DailyMissionCollect
+from tasks.daily_mission_collect import DailyMissionCollect, DailyRoarJukeboxCollect
 from config.config import Config
 
 def require_admin():
@@ -21,44 +21,39 @@ def require_admin():
 def initialize_tasks(container: TaskContainer):
     """初始化并添加所有任务到容器"""
     # 游戏启动和初始化任务 - 最高优先级
-    # container.add_task(StartGame(), priority=0)
-    # container.add_task(CloseNotice(), priority=1)
-    #
-    # # 主要游戏任务 - 中等优先级
-    # container.add_task(WildernessCollect(), priority=2)
-    # container.add_task(PneumaAnalysis(), priority=3)
+    container.add_task(StartGame(), priority=0)
+    container.add_task(CloseNotice(), priority=1)
+    
+    # 主要游戏任务 - 中等优先级
+    container.add_task(WildernessCollect(), priority=2)
+    container.add_task(PneumaAnalysis(), priority=3)
     container.add_task(ThePoussiere(), priority=4)
     
     # 可选任务 - 较低优先级
     # container.add_task(DailyMissionCollect(), priority=5)  # 自动发邮件，暂不需要
+    container.add_task(DailyRoarJukeboxCollect(), priority=6)
 
 def main():
     """主函数"""
     try:
-        # 初始化日志
         setup_logging()
         logging.info("初始化系统...")
         
-        # 初始化任务容器
         container = TaskContainer()
         
-        # 等待游戏启动
         logging.info("等待游戏启动...")
         time.sleep(5)
         
-        # 初始化并添加任务
         initialize_tasks(container)
         logging.info(f"已添加 {container.get_queue_size()} 个任务到队列")
         
-        # 等待所有任务完成
         while not container.is_empty():
             current_task = container.get_current_task()
-            if current_task:
-                logging.info(f"正在执行任务: {current_task.__class__.__name__}")
-                display_task_status(container)
+            # if current_task:
+            #     logging.info(f"正在执行任务: {current_task.__class__.__name__}")
+            #     display_task_status(container)
             time.sleep(1)
         
-        # 停止任务容器
         container.stop()
         logging.info("所有任务已完成")
         
@@ -66,7 +61,8 @@ def main():
         logging.error(f"执行过程中发生错误: {str(e)}", exc_info=True)
         raise
     finally:
-        input("按回车键退出...") # 防止窗口闪退
+        # input("按回车键退出...") # 防止窗口闪退
+        pass
 
 def setup_logging():
     """配置日志系统"""
@@ -88,5 +84,6 @@ def display_task_status(container: TaskContainer):
             logging.info(f"- {task.__class__.__name__}: {status.value}")
 
 if __name__ == '__main__':
-    require_admin()  # 如需管理员权限请取消注释
+    # require_admin()  # 如需管理员权限请取消注释
+
     main()

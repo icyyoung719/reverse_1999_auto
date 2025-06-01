@@ -34,4 +34,5 @@ class GameTarget:
     collect_tasks = Target(name = "collect_tasks_target", path = "../assets/collect_tasks.png")
     confirm_collect = Target(name = "confirm_collect_target", path = "../assets/confirm_collect.png")
     collect_roar_jukebox = Target(name = "collect_roar_jukebox_target", path = "../assets/collect_roar_jukebox.png")
+    roar_jukebox_update = Target(name = "roar_jukebox_update_target", path = "../assets/roar_jukebox_update.png")
 
