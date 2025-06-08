@@ -14,31 +14,17 @@
 - [x] 自动缓存设置，不用每次都手动勾选功能
 
 大饼:
-- [ ] OCR识别体力
-- [ ] 将输出日志输出到一个对话框之中
+
+[查看 TODO 事项](TODO.md)
 
 
 ## 如何使用
-pip 库
-```shell
-pip install opencv-python pyautogui numpy
+1. pip 库安装依赖
+```bash
+pip install -r requirements.txt
 ```
-
-进入游戏首页（箱子页面）
-
-接下来直接运行 `main.py` 即可。
-***
-
-reverse 1999 auto by OCR
-
-## TODO list:
-- 重构代码，以回调函数实现
-- 将参数（如time.sleep的大小）存放在单独的py文件中调用，提升可读性
-- 将截图放在不同的文件夹下，防止每次花费大量时间查找
-- 将功能需求存放在容器中，提供运行时添加/删除 功能的效果
-
-我制作了一个游戏脚本，但是这个游戏脚本只能线性运行
-我的想法：任务选项间首先平等，将选择的任务添加到某个容器中，每次从中取出任务，完成后检查容器；任务执行过程中能够添加/删除容器中的其他任务；
+2. 修改`run_1999.bat`中的文件路径为实际的路径，并设置适当的python环境启动方式
+3. 双击`run_1999.bat`即可自动以管理员身份运行程序
 
 
 ## 代码结构
@@ -94,6 +80,7 @@ reverse_1999_copilot/
     │       └── util.py
     ├── __pycache__
     ├── README.md
+    ├── requirements.txt
     ├── TODO.md
     ├── function.py
     ├── main.py
