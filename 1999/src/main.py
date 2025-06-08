@@ -3,13 +3,19 @@ import os
 import ctypes
 import time
 import logging
+
 from tasks.task_container import TaskContainer, TaskStatus
 from tasks.start_game import StartGame, CloseNotice
 from tasks.wildness import WildernessCollect
 from tasks.pneuma_analysis import PneumaAnalysis
 from tasks.the_poussiere import ThePoussiere
 from tasks.daily_mission_collect import DailyMissionCollect, DailyRoarJukeboxCollect
+
 from config.config import Config
+
+from ui import MainWindow
+from PySide6.QtWidgets import QApplication, QWidget, QFileDialog
+from PySide6.QtCore import Slot
 
 def require_admin():
     """检查并请求管理员权限"""
@@ -85,5 +91,8 @@ def display_task_status(container: TaskContainer):
 
 if __name__ == '__main__':
     # require_admin()  # 如需管理员权限请取消注释
-
-    main()
+    # main()
+    app = QApplication([])
+    window = MainWindow()
+    window.show()
+    app.exec()
