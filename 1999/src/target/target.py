@@ -14,7 +14,13 @@ class Target(EngineTarget):
         super().__init__(name, processed_path, Config.MIN_SIMILARITY, offset)
         
         # self.min_similar = MIN_SIMILARITY
-
+    def click(self, scale=None, similar=None):
+        if scale is None:
+            scale = Config.SCALE
+        if similar is None:
+            similar = self.min_similar
+        # return click_on_image(self.path, scale=scale, similar=similar, click_offset=self.offset)
+        return super().click(scale, similar)
 
     # def click(self, similar=None):
     #     return super().click(similar)

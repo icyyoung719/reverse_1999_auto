@@ -12,6 +12,10 @@ class Config:
     MIN_SIMILARITY = 0.8
     LANGUAGE = "en"
     OUTPUT_DIR = "../output"
+    # 游戏分辨率
+    GAME_RESOLUTION = (1920, 1080)
+    IMG_BASE_RESOLUTION = (1600, 900)
+    SCALE = (GAME_RESOLUTION[0] / IMG_BASE_RESOLUTION[0], GAME_RESOLUTION[1] / IMG_BASE_RESOLUTION[1])
 
     @staticmethod
     def get(key: str, default=None):

@@ -16,6 +16,10 @@ def capture_screen_region(left, top, width, height):
         frame = cv2.cvtColor(frame, cv2.COLOR_BGRA2BGR)  # mss返回的是BGRA
     return frame
 
+def resize_template(template, scale):
+    scale_x, scale_y = scale
+    new_size = (int(template.shape[1] * scale_x), int(template.shape[0] * scale_y))
+    return cv2.resize(template, new_size, interpolation=cv2.INTER_LINEAR)
 
 def find_template(template, screenshot):
     """使用 OpenCV 模板匹配"""
@@ -24,11 +28,12 @@ def find_template(template, screenshot):
     return max_val, max_loc
 
 
-def find_image_on_all_monitors(template, similar=0.8):
+def find_image_on_all_monitors(template, scale, similar=0.8):
     """
     在所有显示器上查找图像
     返回值: (center_x, center_y) 或 False
     """
+    template = resize_template(template, scale)
     for monitor in get_monitors():
         try:
             # 截图当前显示器区域
@@ -50,7 +55,7 @@ def find_image_on_all_monitors(template, similar=0.8):
     return False
 
 
-def click_on_image(template_path, similar=0.8, click_offset=None):
+def click_on_image(template_path, scale, similar=0.8, click_offset=None):
     if click_offset is None:
         click_offset = [0, 0]
     template = cv2.imread(template_path)
@@ -58,7 +63,7 @@ def click_on_image(template_path, similar=0.8, click_offset=None):
         print(f"无法加载图像: {template_path}")
         return False
 
-    location = find_image_on_all_monitors(template, similar=similar)
+    location = find_image_on_all_monitors(template, scale, similar=similar)
     if location:
         center_x, center_y = location
         center_x += click_offset[0]
@@ -71,7 +76,7 @@ def click_on_image(template_path, similar=0.8, click_offset=None):
         return False
 
 
-def wait_until_image_show(template_path, similar=0.8, timeout=40, interval=1):
+def wait_until_image_show(template_path, scale, similar=0.8, timeout=40, interval=1):
     start_time = time.time()
     template = cv2.imread(template_path)
     if template is None:
@@ -79,7 +84,7 @@ def wait_until_image_show(template_path, similar=0.8, timeout=40, interval=1):
         return False
 
     while time.time() - start_time < timeout:
-        location = find_image_on_all_monitors(template, similar=similar)
+        location = find_image_on_all_monitors(template, scale, similar=similar)
         if location:
             center_x, center_y = location
             print(f"Image found at ({center_x}, {center_y})")
@@ -90,13 +95,13 @@ def wait_until_image_show(template_path, similar=0.8, timeout=40, interval=1):
     return False
 
 
-def detect_image(template_path, similar=0.8):
+def detect_image(template_path, scale, similar=0.8):
     template = cv2.imread(template_path)
     if template is None:
         print(f"无法加载图像: {template_path}")
         return False
 
-    location = find_image_on_all_monitors(template, similar=similar)
+    location = find_image_on_all_monitors(template, scale, similar=similar)
     return bool(location)
 
 

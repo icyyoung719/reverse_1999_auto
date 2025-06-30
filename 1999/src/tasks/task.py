@@ -9,15 +9,15 @@ class Task(ABC):
     def __init__(self, name=None):
         self.name = name or self.__class__.__name__
     def wait_and_click(self, target: Target, similarity = Config.MIN_SIMILARITY, timeout=30):
-        wait_until_image_show(target.path, similarity, timeout)
+        wait_until_image_show(target.path, Config.SCALE, similarity, timeout)
         time.sleep(Config.CLICK_AFTER_WAIT)
         return target.click()
 
     def detect_image(self, target: Target):
-        return detect_image(target.path)
+        return detect_image(target.path, Config.SCALE)
     
     def wait_until_image_show(self, target: Target, similarity = Config.MIN_SIMILARITY, timeout=30):
-        return wait_until_image_show(target.path, similarity, timeout)
+        return wait_until_image_show(target.path, Config.SCALE, similarity, timeout)
 
     def run(self):
         print(f"===== Task Begin: {self.name} =====")
