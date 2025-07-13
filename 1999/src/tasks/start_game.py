@@ -61,6 +61,12 @@ class CloseNotice(Task):
             while not self.detect_image(GameTarget.return_to_login):
                 time.sleep(Config.CLICK_INTERVAL)
                 Log.press(GeneralKey.BACK_KEY)
+
+            # 防止再次弹出公告，再次重复一次
+            time.sleep(Config.CLICK_INTERVAL)
+            while not self.detect_image(GameTarget.return_to_login):
+                time.sleep(Config.CLICK_INTERVAL)
+                Log.press(GeneralKey.BACK_KEY)
             
             time.sleep(Config.CLICK_INTERVAL)
             Log.press(GeneralKey.BACK_KEY)
