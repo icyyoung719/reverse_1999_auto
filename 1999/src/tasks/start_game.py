@@ -5,6 +5,7 @@ from config.key.general import GeneralKey
 from config.config import Config
 import time
 import subprocess
+import os
 # import pyautogui
 
 from log import Log
@@ -19,7 +20,11 @@ class StartGame(Task):
     def run(self):
         super().run()
         try:
-            subprocess.Popen(self.gamePath)
+            subprocess.Popen(
+                self.gamePath,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
             # 等待标题出现、
             # print("等待游戏启动")
             # time.sleep(5)
